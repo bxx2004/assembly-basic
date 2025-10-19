@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/assembly-basic-bukkit" />
+            <option value="$PROJECT_DIR$/assembly-basic-neoforge1218" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="true" />

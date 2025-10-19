@@ -21,6 +21,9 @@ taboolib {
         contributors {
             name("12232")
         }
+        dependencies{
+            name("assembly-bukkit").optional(false)
+        }
     }
     version { taboolib = "6.2.3-664550e" }
 }
