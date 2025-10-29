@@ -3,6 +3,7 @@ package net.bxx2004.assembly_bukkit.basic
 import net.bxx2004.assembly.Assembly
 import net.bxx2004.assembly.AssemblyRegister.Companion.registerServerInstance
 import net.bxx2004.assembly_bukkit.basic.app.window.WindowApplication
+import net.bxx2004.assembly_bukkit.basic.app.window.instance.WindowIcon
 import net.bxx2004.assembly_bukkit.basic.app.window.instance.WindowTitle
 import taboolib.common.platform.Plugin
 
@@ -18,6 +19,8 @@ object AssemblyBasicBukkit : Plugin() {
         Assembly.register {
             application(WindowApplication)
                 .registerServerInstance(WindowTitle)
+                .registerServerInstance(WindowIcon)
+            Assembly
         }
     }
 }

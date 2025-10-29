@@ -16,6 +16,10 @@ repositories {
         url = 'https://thedarkcolour.github.io/KotlinForForge/'
         content { includeGroup "thedarkcolour" }
     }
+    maven {
+        url = 'http://mavenrepo.revoist.cn/repository/maven-releases/'
+        allowInsecureProtocol = true
+    }
 }
 
 base {
@@ -104,8 +108,8 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     implementation 'thedarkcolour:kotlinforforge-neoforge:5.10.0'
-    implementation files("libs/assembly_neoforge_1218-1.0-SNAPSHOT.jar")
-    compileOnly files("libs/assembly-universal-1.0-SNAPSHOT.jar")
+    implementation 'net.bxx2004:assembly-neoforge-121:1.2.2'
+    compileOnly 'net.bxx2004:assembly-universal:1.2.2'
     // Example mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"

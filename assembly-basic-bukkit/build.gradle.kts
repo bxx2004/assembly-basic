@@ -30,6 +30,10 @@ taboolib {
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("http://mavenrepo.revoist.cn/repository/maven-releases/")
+        isAllowInsecureProtocol = true
+    }
 }
 
 dependencies {
@@ -37,6 +41,7 @@ dependencies {
     compileOnly("ink.ptms.core:v12004:12004:universal")
     compileOnly(kotlin("stdlib"))
     compileOnly(fileTree("libs"))
+    compileOnly("net.bxx2004:assembly-bukkit-api:1.2.2")
 }
 
 tasks.withType<JavaCompile> {

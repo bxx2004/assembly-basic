@@ -6,8 +6,11 @@ import net.bxx2004.assembly.application.server.ServerInstanceManager.sync
 import net.bxx2004.assembly.data.AssemblyIdentifier.Companion.id
 import net.bxx2004.assembly.data.Side
 import net.bxx2004.assembly_bukkit.BukkitSender.Companion.asPacketSender
+import net.bxx2004.assembly_bukkit.api.PlayerConnectionEvent
+import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerRegisterChannelEvent
 import taboolib.common.platform.event.SubscribeEvent
+import taboolib.common.platform.function.submit
 import taboolib.module.configuration.Config
 import taboolib.module.configuration.Configuration
 
@@ -21,18 +24,16 @@ object WindowApplication : AssemblyApplication(){
 
 
     override val side = Side.SERVER
-    override val id = "application:basic-window".id()
+    override val id = "basic:window".id()
 
 
     @Config("window-options.yml", migrate = true, autoReload = true)
     lateinit var options: Configuration
         private set
 
-
     //同步instance，也可以用来重载应用
     @SubscribeEvent
-    fun playerJoinEvent(event: PlayerRegisterChannelEvent){
-        if (event.channel != Assembly.CHANNEL) return
+    fun playerJoinEvent(event: PlayerConnectionEvent.Finish){
         sync(event.player.asPacketSender)
     }
 }

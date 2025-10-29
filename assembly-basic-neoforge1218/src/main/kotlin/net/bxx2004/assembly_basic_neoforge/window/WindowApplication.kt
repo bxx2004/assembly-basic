@@ -7,6 +7,6 @@ import net.bxx2004.assembly.data.Side
 
 
 object WindowApplication : AssemblyApplication(){
-    override val side = Side.SERVER
-    override val id = "application:basic-window".id()
+    override val side = Side.CLIENT
+    override val id = "basic:window".id()
 }

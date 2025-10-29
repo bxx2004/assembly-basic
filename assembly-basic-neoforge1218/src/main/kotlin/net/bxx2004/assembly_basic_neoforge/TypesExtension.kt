@@ -1,6 +1,8 @@
 package net.bxx2004.assembly_basic_neoforge
 
 import net.bxx2004.assembly.application.InstanceTypes
+import net.minecraft.client.Minecraft
+import net.minecraft.client.player.LocalPlayer
 
 /**
  * @author 6hisea
